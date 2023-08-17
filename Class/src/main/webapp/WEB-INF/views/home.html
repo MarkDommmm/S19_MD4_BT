@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1 {
+
+            margin: auto;
+            box-shadow: 0 0 2.5rem rgba(255, 0, 0, 100);
+            border-radius: 10px;
+            width: 540px;
+
+        }
+
+        i {
+            text-decoration: underline;
+        }
+        .container{
+            display: flex;
+            gap:50px;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        #list-example{
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+<th:block th:insert="layout/heading.html"></th:block>
+<h1>WELCOME TO VIET NAM!!!</h1>
+<!--Hi <i th:utext="${name}"></i>-->
+<div class="container">
+
+
+<div id="list-example" class="list-group">
+    <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+    <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+    <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+    <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+</div>
+
+<table class="table" >
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th:block th:object="${p}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{age}"></td>
+            <td th:text="*{address}"></td>
+        </th:block>
+    </tr>
+
+
+    </tbody>
+</table>
+
+
+</div>
+<nav aria-label="Page navigation example" style="float: right ; margin-right: 80px"  >
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
